@@ -10,7 +10,7 @@ const ProtectedRoute = () => {
     if (isLoading) return <h1>Loading.....</h1>
 
     if (!employee) {
-        return <Navigate to="" />
+        return <Navigate to="/" />
     }
     return <Outlet />
 }

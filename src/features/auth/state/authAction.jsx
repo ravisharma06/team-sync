@@ -18,7 +18,7 @@ export const loginEmployee = createAsyncThunk(
 )
 
 
-export const currentLoggedEmployee = createAsyncThunk("auth/me", async (credentails, thunkApi) => {
+export const currentLoggedEmployee = createAsyncThunk("auth/me", async (_, thunkApi) => {
     try {
 
         const res = await axiosInstance.get("/auth/me")
