@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { Outlet } from 'react-router'
 import { useSelector } from 'react-redux'
-import AsideNav from '../../features/employee/ui/page/components/AsideNav';
-import TopNav from '../../features/employee/ui/page/components/TopNav';
+import AsideNav from '../../features/dashboard/ui/components/AsideNav';
+import TopNav from '../../features/dashboard/ui/components/TopNav';
 const DashboardLayout = () => {
 
     const { mode } = useSelector((store) => store.theme)
