@@ -8,7 +8,6 @@ const Home = () => {
     return (
         <>
             <div>Home</div>
-            <button onClick={() => dispatch(toggleTheme())}>change theme </button>
         </>
     )
 }

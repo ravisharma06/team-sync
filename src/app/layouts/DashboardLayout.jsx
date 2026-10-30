@@ -15,15 +15,13 @@ const DashboardLayout = () => {
         }
     }, [mode])
     return (
-        <div className="flex min-h-screen">
-            <div className="h-screen w-60 shrink-0">
+        <div className="flex h-dvh overflow-hidden">
+            <div className="h-full w-60 shrink-0 overflow-y-auto">
                 <AsideNav />
             </div>
-            <div className="min-w-0 flex-1">
-                <div className="flex flex-col">
-                    <TopNav />
-                </div>
-                <div>
+            <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col">
+                <TopNav />
+                <div className="min-h-0 flex-1 overflow-y-auto">
                     <Outlet />
                 </div>
             </div>

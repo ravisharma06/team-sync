@@ -27,9 +27,20 @@
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
+    --auth-accent: #6D5BD0;
 
     /* BORDER */
     --border-color: #2d3748;
+
+    /* SIDEBAR */
+    --sidebar-bg: var(--primary);
+    --sidebar-accent: #C4B5FD;
+    --sidebar-border: rgba(255, 255, 255, 0.1);
+    --sidebar-text: rgba(255, 255, 255, 0.75);
+    --sidebar-text-hover: #ffffff;
+    --sidebar-active-text: #ffffff;
+    --sidebar-active-bg: rgba(255, 255, 255, 0.15);
+    --sidebar-hover-bg: rgba(255, 255, 255, 0.05);
 
     /* SHADOW */
     --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -65,9 +76,20 @@
     --text-primary: #0f172a;
     --text-secondary: #334155;
     --text-muted: #64748b;
+    --auth-accent: #5145CD;
 
     /* BORDER */
     --border-color: #cbd5e1;
+
+    /* SIDEBAR */
+    --sidebar-bg: var(--bg-surface);
+    --sidebar-accent: var(--primary);
+    --sidebar-border: var(--border-color);
+    --sidebar-text: var(--text-secondary);
+    --sidebar-text-hover: var(--text-primary);
+    --sidebar-active-text: var(--primary);
+    --sidebar-active-bg: #eef0ff;
+    --sidebar-hover-bg: #f1f5f9;
 
     /* SHADOW */
     --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);

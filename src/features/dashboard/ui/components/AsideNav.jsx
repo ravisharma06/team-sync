@@ -8,11 +8,11 @@ const AsideNav = () => {
 
     let navigations = employee?.role === "admin" ? adminNavigation : employeeNavigation
     return (
-        <aside className="h-full border-r border-white/10 bg-[var(--primary)] py-6 text-center">
-            <h2 className="px-4 text-2xl leading-tight font-bold tracking-tight text-[#C4B5FD]">
+        <aside className="min-h-full border-r border-[var(--sidebar-border)] bg-[var(--sidebar-bg)] py-6 text-center">
+            <h2 className="px-4 text-2xl leading-tight font-bold tracking-tight text-[var(--sidebar-accent)]">
                 team-sync
             </h2>
-            <h5 className="mt-1 px-4 text-sm font-medium text-white/70">
+            <h5 className="mt-1 px-4 text-sm font-medium text-[var(--text-muted)]">
                 Explore workspace
             </h5>
 

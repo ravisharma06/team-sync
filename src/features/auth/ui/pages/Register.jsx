@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import useAuth from '../../hooks/useAuth';
 import { Link } from 'react-router';
 
@@ -65,29 +65,29 @@ const icons = {
 }
 
 const fieldBox =
-  'flex items-center gap-2.5 h-9 px-3 rounded-md bg-[#eef0fb] border border-transparent text-slate-500 focus-within:bg-white focus-within:border-blue-600 focus-within:ring-4 focus-within:ring-blue-600/15'
+  'flex h-9 items-center gap-2.5 rounded-md border border-[var(--border-color)] bg-[var(--bg-main)] px-3 text-[var(--text-muted)] focus-within:border-[var(--auth-accent)] focus-within:bg-[var(--bg-surface)]'
 const inputCls =
-  'flex-1 min-w-0 bg-transparent outline-none text-sm text-slate-900 placeholder:text-slate-400'
-const labelCls = 'block text-xs font-semibold text-slate-700 mb-1.5'
+  'min-w-0 flex-1 bg-transparent text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-muted)]'
+const labelCls = 'mb-1.5 block text-xs font-semibold text-[var(--text-secondary)]'
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
 
-  const { register, handleSubmit, errors, navigate, handleRegister } = useAuth()
+  const { navigate } = useAuth()
 
 
   return (
-    <div className="min-h-screen min-h-[100dvh] flex flex-col bg-[#f8f8ff] font-sans text-slate-900">
+    <div className="min-h-screen min-h-[100dvh] flex flex-col bg-[var(--bg-main)] font-sans text-[var(--text-primary)] transition-colors">
       {/* Top bar */}
-      <header className="flex items-center px-4 py-2.5 border-t-[3px]  bg-gradient-to-b from-slate-200 to-[#f8f8ff]">
+      <header className="flex items-center bg-[var(--bg-surface)] px-4 py-2.5">
         <div className="flex items-center gap-2.5">
-          <span className="grid place-items-center w-8 h-8 rounded-lg bg-blue-600 text-white">
+          <span className="grid place-items-center w-8 h-8 rounded-lg bg-[var(--auth-accent)] text-white">
             {icons.building}
           </span>
           <span className="leading-tight">
             <span className="block text-sm font-bold">Team Sync</span>
-            <span className="block text-[10px] font-semibold text-slate-500">Employee Management</span>
+            <span className="block text-[10px] font-semibold text-[var(--text-muted)]">Employee Management</span>
           </span>
         </div>
       </header>
@@ -100,7 +100,7 @@ const Register = () => {
           </div>
 
           {/* Register card */}
-          <div className="bg-white rounded-xl p-4 sm:p-5 shadow-sm shadow-slate-900/5">
+          <div className="rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-4 shadow-[var(--shadow-md)] sm:p-5">
             <form onSubmit={(e) => e.preventDefault()} noValidate className="space-y-2.5">
               {/* Name + Employee ID */}
               <div className="space-y-2.5">
@@ -163,7 +163,7 @@ const Register = () => {
                       type="button"
                       onClick={() => setShowPassword((v) => !v)}
                       aria-label={showPassword ? 'Hide password' : 'Show password'}
-                      className="text-slate-500 hover:text-slate-700"
+                      className="text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                     >
                       {showPassword ? icons.eyeOff : icons.eye}
                     </button>
@@ -184,7 +184,7 @@ const Register = () => {
                       type="button"
                       onClick={() => setShowConfirm((v) => !v)}
                       aria-label={showConfirm ? 'Hide password' : 'Show password'}
-                      className="text-slate-500 hover:text-slate-700"
+                      className="text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                     >
                       {showConfirm ? icons.eyeOff : icons.eye}
                     </button>
@@ -193,11 +193,11 @@ const Register = () => {
               </div>
 
               {/* Terms */}
-              <label className="flex items-start gap-2 text-xs text-slate-500 cursor-pointer">
-                <input type="checkbox" className="mt-0.5 w-3.5 h-3.5 accent-blue-600" />
+              <label className="flex cursor-pointer items-start gap-2 text-xs text-[var(--text-muted)]">
+                <input type="checkbox" className="mt-0.5 h-3.5 w-3.5 accent-[var(--auth-accent)]" />
                 <span>
                   I agree to the{' '}
-                  <a href="#terms" className="font-semibold text-blue-800 hover:underline">
+                  <a href="#terms" className="font-semibold text-[var(--auth-accent)] hover:underline">
                     company policies
                   </a>
                 </span>
@@ -206,7 +206,7 @@ const Register = () => {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full h-9 flex items-center justify-center gap-2 rounded-md bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold transition-colors"
+                className="flex h-9 w-full items-center justify-center gap-2 rounded-md bg-[var(--auth-accent)] text-sm font-bold text-white transition-opacity hover:opacity-90"
               >
                 Register
                 {icons.arrow}
@@ -215,9 +215,9 @@ const Register = () => {
           </div>
 
           {/* Back to login */}
-          <p className="mt-4 text-center text-xs text-slate-500">
+          <p className="mt-4 text-center text-xs text-[var(--text-muted)]">
             Already registered?{' '}
-            <Link onClick={() => navigate("/")} className="font-semibold text-blue-800 hover:underline">
+            <Link onClick={() => navigate("/")} className="font-semibold text-[var(--auth-accent)] hover:underline">
               Sign In
             </Link>
           </p>
