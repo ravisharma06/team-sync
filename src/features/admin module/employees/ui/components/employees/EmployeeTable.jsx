@@ -1,37 +1,45 @@
 
 import EmployeeRow from "./EmployeeRow";
 
-const EmployeeTable = ({ employees }) => {
+const EmployeeTable = ({ employees, onUpdateEmployee, isUpdatingEmployee }) => {
 
     return (
-        <div className="bg-white border rounded-xl overflow-x-auto">
+        <div className="overflow-x-auto">
 
-            <table className="w-full text-sm text-left">
+            <table className="w-full text-left whitespace-nowrap">
 
-                <thead className="bg-gray-50 text-gray-500">
-                    <tr>
-                        <th className="p-4">Employee</th>
-                        <th className="p-4">Department</th>
-                        <th className="p-4">Role</th>
-                        <th className="p-4">Status</th>
-                        <th className="p-4">Joining Date</th>
-                        <th className="p-4">Actions</th>
+                <thead className="sticky top-0 border-b border-[var(--border-color)] bg-[var(--bg-main)]">
+                    <tr className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
+                        <th className="px-6 py-4 text-left font-semibold">Employee</th>
+                        <th className="px-6 py-4 text-left font-semibold">Department</th>
+                        <th className="px-6 py-4 text-left font-semibold">Role</th>
+                        <th className="px-6 py-4 text-left font-semibold">Status</th>
+                        <th className="px-6 py-4 text-left font-semibold">Joining Date</th>
+                        <th className="px-6 py-4 text-center font-semibold">Actions</th>
                     </tr>
                 </thead>
 
-                <tbody className="divide-y">
+                <tbody className="divide-y divide-[var(--border-color)]">
 
                     {employees.map((employee) => (
                         <EmployeeRow
                             key={employee._id}
                             employee={employee}
+                            onUpdateEmployee={onUpdateEmployee}
+                            isUpdatingEmployee={isUpdatingEmployee}
                         />
                     ))}
 
                     {employees.length === 0 && (
                         <tr>
-                            <td colSpan="6" className="p-8 text-center text-gray-500">
-                                No employees found.
+                            <td colSpan="6" className="px-6 py-16 text-center">
+                                <div className="mb-3 text-4xl">🔍</div>
+                                <h3 className="text-base font-semibold text-[var(--text-primary)]">
+                                    No employees found
+                                </h3>
+                                <p className="mt-2 text-sm text-[var(--text-muted)]">
+                                    Try changing your search or filters.
+                                </p>
                             </td>
                         </tr>
                     )}
